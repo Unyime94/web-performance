@@ -1,0 +1,27 @@
+Web performance is crucial to web development. It focuses on:
+1. The speed at which pages load
+2. How responsive they are to user input.
+
+Why does speed matter?
+Speed is one of the defining factors in how successful online ventures can be.
+
+1. Performance is about retaining customers
+Performance plays a vital role in the success of any online venture. Websites that load quickly and respond to user input in a timely fashion engage and retain users better than websites that are slow to load, and feel sluggish.
+
+Studies have also shown the negative impact that poor performance can have on business outcomes. As an example, the BBC found they lost an additional 10% of users for every additional second their site took to load. If you care about retaining users, then you should be focusing on performance!
+
+2. Performance is about improving conversions
+While retaining users is crucial to improving conversions, performance can also have a material effect on whether your website's users follow through. Slow sites have a negative impact on revenue, and fast sites are shown to increase conversion rates and improve business outcomes, as these select case studies can attest to:
+
+How Rakuten 24's investment in Core Web Vitals increased revenue per visitor by 53.37% and conversion rate by 33.13%
+Vodafone: A 31% improvement in LCP increased sales by 8%
+How redBus improved their website's Interaction to Next Paint (INP) and increased sales by 7%
+The relationship between performance and business outcomes is clear: if you have an online business, performance is something you should be prioritizing if you're not already—it's likely that your competitors are!
+
+3. Performance is about the user experience
+Performance isn't just about business outcomes. When it comes to the user experience, speed matters. A consumer study showed that the stress response to delays in page speed are similar to that of watching a horror movie or solving a mathematical problem, and greater than waiting in a checkout line at a retail store.
+
+Performance is a foundational aspect of good user experiences. When sites ship lots of code, browsers must use megabytes of the user's data plan to download it. Mobile devices in particular have limited CPU power and memory. This can create poor performance conditions, and—knowing human behavior—people can only tolerate adverse conditions on a website for so long before abandoning it.
+
+
+
