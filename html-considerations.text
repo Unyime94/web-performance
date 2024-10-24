@@ -1,0 +1,45 @@
+General HTML performance considerations
+
+The first request for a web page is for an HTML resource—and ensuring 
+that HTML arrives quickly with minimal delays is a key performance goal.
+
+When you enter a URL in the browser's address bar, the browser sends a 
+GET request to the server to retrieve it. The first request for a web page 
+is for an HTML resource.
+
+That initial request for HTML goes through several steps, each of which take 
+some time. Reducing the time spent on each step gives you a faster Time to 
+First Byte (TTFB). 
+
+a high TTFB does make it challenging to reach the designated "good" thresholds 
+for metrics such as Largest Contentful Paint (LCP) and First Contentful Paint (FCP).
+
+Largest Contentful Paint (LCP)
+Based on discussions in the W3C Web Performance Working Group and research done at 
+Google, we've found that a more accurate way to measure when the main content of a 
+page is loaded is to look at when the largest element is rendered.
+
+LCP reports the render time of the largest image, text block, or video visible in 
+the viewport, relative to when the user first navigated to the page.
+
+To provide a good user experience, sites should strive to have Largest Contentful
+ Paint of 2.5 seconds or less. To ensure you're hitting this target for most of your 
+ users, a good threshold to measure is the 75th percentile of page loads, segmented 
+ across mobile and desktop devices.
+
+First Contentful Paint (FCP)?
+First Contentful Paint (FCP) measures the time from when the user first navigated to 
+the page to when any part of the page's content is rendered on the screen. For this 
+metric, "content" refers to text, images (including background images), <svg> elements, 
+or non-white <canvas> elements.
+
+ It is important to note that FCP includes any unload time from the previous page,
+  connection set up time, redirect time, and Time To First Byte (TTFB) which can be 
+  significant when measured in the field and can lead to differences between field 
+  and lab measurements.
+
+  To provide a good user experience, sites should strive to have a First Contentful 
+  Paint of 1.8 seconds or less. To ensure you're hitting this target for most of your 
+  users, a good threshold to measure is the 75th percentile of page loads, segmented 
+  across mobile and desktop devices.
+
