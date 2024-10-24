@@ -34,12 +34,32 @@ metric, "content" refers to text, images (including background images), <svg> el
 or non-white <canvas> elements.
 
  It is important to note that FCP includes any unload time from the previous page,
-  connection set up time, redirect time, and Time To First Byte (TTFB) which can be 
-  significant when measured in the field and can lead to differences between field 
-  and lab measurements.
+ connection set up time, redirect time, and Time To First Byte (TTFB) which can be 
+ significant when measured in the field and can lead to differences between field 
+ and lab measurements.
 
-  To provide a good user experience, sites should strive to have a First Contentful 
-  Paint of 1.8 seconds or less. To ensure you're hitting this target for most of your 
-  users, a good threshold to measure is the 75th percentile of page loads, segmented 
-  across mobile and desktop devices.
+ To provide a good user experience, sites should strive to have a First Contentful 
+ Paint of 1.8 seconds or less. To ensure you're hitting this target for most of your 
+ users, a good threshold to measure is the 75th percentile of page loads, segmented 
+ across mobile and desktop devices.
+
+Minimize redirects
+When a resource is requested, the server may respond with a redirect, either with 
+a permanent redirect (a 301 Moved Permanently response) or a temporary one (a 302 
+Found response).
+
+ Redirects slow down page load speed because it requires the browser to make an 
+ additional HTTP request at the new location to retrieve the resource. There are two
+ types of redirects:
+
+ Same-origin redirects that occur entirely within your origin. These types of redirects 
+ are completely within your control, as the logic for managing them resides entirely on 
+ your web server.
+ Cross-origin redirects that are initiated by another origin. These types of redirects are 
+ typically out of your control.
+ Cross-origin redirects are often used by ads, URL-shortening services, and other third 
+ party services. Though cross-origin redirects are outside of your control, you may still 
+ want to check that you avoid multiple redirects—for example, having an ad that links to 
+ an HTTP page which in turn redirects to its HTTPS equivalent, or a cross-origin redirect 
+ that arrives to your origin, but then triggers a same-origin redirect.
 
