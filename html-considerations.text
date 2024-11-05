@@ -43,7 +43,9 @@ or non-white <canvas> elements.
  users, a good threshold to measure is the 75th percentile of page loads, segmented 
  across mobile and desktop devices.
 
+
 MINIMIZE REDIRECTS
+
 When a resource is requested, the server may respond with a redirect, either with 
 a permanent redirect (a 301 Moved Permanently response) or a temporary one (a 302 
 Found response).
@@ -83,6 +85,9 @@ of requests to your server.
 Updates to the HTML (like after a new deployment) will be picked up within a few minutes.
 This short caching is useful when the content is “static,” meaning it doesn’t change often or doesn’t 
 need to be personalized.
+
+
+CACHING HTML RESPONSES
 
 When Not to Cache HTML
 For pages that change based on who’s logged in (like a user’s dashboard), caching can be a problem:
