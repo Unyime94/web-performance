@@ -43,7 +43,7 @@ or non-white <canvas> elements.
  users, a good threshold to measure is the 75th percentile of page loads, segmented 
  across mobile and desktop devices.
 
-Minimize redirects
+MINIMIZE REDIRECTS
 When a resource is requested, the server may respond with a redirect, either with 
 a permanent redirect (a 301 Moved Permanently response) or a temporary one (a 302 
 Found response).
@@ -62,4 +62,48 @@ Found response).
  want to check that you avoid multiple redirects—for example, having an ad that links to 
  an HTTP page which in turn redirects to its HTTPS equivalent, or a cross-origin redirect 
  that arrives to your origin, but then triggers a same-origin redirect.
+
+CACHE HTML RESPONSES
+Why Cache HTML?
+Caching an HTML page (saving a version of it so it loads faster next time) can reduce the 
+load on the server and improve speed for users. When a page is cached, users can access it 
+quicker because it’s not downloaded fresh from the server every single time they visit.
+
+The Challenge with HTML Caching
+HTML pages often link to other resources like CSS, JavaScript, and images. These resources 
+are sometimes named in ways that change when the content is updated (like adding a “fingerprint” 
+in the filename). So if the HTML page is cached but one of these resources is updated, the cached 
+page may still point to the old, outdated version.
+
+The Solution: Short Cache Lifetime
+One approach is to set a short cache time for HTML, like five minutes. This way:
+
+CDNs (Content Delivery Networks) and browsers can still cache the page briefly, reducing the number 
+of requests to your server.
+Updates to the HTML (like after a new deployment) will be picked up within a few minutes.
+This short caching is useful when the content is “static,” meaning it doesn’t change often or doesn’t 
+need to be personalized.
+
+When Not to Cache HTML
+For pages that change based on who’s logged in (like a user’s dashboard), caching can be a problem:
+
+Security issues may arise, especially if private info is cached and then shown to the wrong user.
+Freshness issues mean the user might see outdated content if the cache doesn’t update.
+For these cases, it’s usually best to avoid caching HTML at all.
+
+Using ETag and Last-Modified for Smart Caching
+If you do decide to cache HTML, you can use “validation headers” like ETag or Last-Modified to make 
+sure the cache stays fresh.
+
+ETag: This is a unique ID for each version of a resource. If the HTML changes, the ETag also changes. 
+When a browser asks for the page, it sends back the current ETag. If the server’s ETag matches the browser’s, 
+it just says “Not Modified” (a quick response) and uses the cached version.
+Last-Modified: This is a timestamp of when the HTML was last updated. The browser checks this timestamp with 
+the server before using the cached version.
+The Downside
+Using ETag or Last-Modified is helpful but still involves a small delay to check freshness. It’s a compromise: 
+you get faster loads with a cache but still need some checks to keep content updated.
+
+Bottom line: Caching HTML can be tricky, so it’s a balance between speed and freshness. For pages that rarely change, 
+a short cache time is fine. For personalized content, avoid caching HTML.
 
